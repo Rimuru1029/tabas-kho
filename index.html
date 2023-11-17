@@ -4,9 +4,87 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="./public/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tabas'kho</title>
+    <title>Tabas'KHO</title>
   </head>
   <body>
+
+    <div class="load-overlay">
+      <div class="series-container"></div>
+    </div>
+
+    <nav class="navbar">
+      <a href="#">
+        <img src="./public/logo.png" alt="Tabas'KHO logo">
+        Tabas'<strong>KHO</strong>
+      </a>
+
+      <ul>
+        <li><a href="#" class="active">Saisons</a></li>
+        <li><a href="#">Critiques</a></li>
+        <li><a href="#">Backstage</a></li>
+      </ul>
+    </nav>
+
+    <header class="header">
+      <div>
+        <h1 class="header-title">Black Mirror</h1>
+
+        <div class="header-info">
+          <p>
+            <strong>6</strong> saisons
+            <span>/</span>
+            <strong>28</strong> épisodes
+          </p>
+
+          <span class="sep"></span>
+
+          <p>
+            Distopia
+          </p>
+
+          <span class="sep"></span>
+
+          <img src="./public/icon-age-limit.png" alt="Pictogramme age limite">
+        </div>
+      </div>
+
+      <span class="glow"></span>
+
+      <img class="background" src="./public/header-background.png" alt="Affiche de Black Mirror">
+    </header>
+
+    <section id="actors">
+      <header>
+        <h2>
+          <div>Les acteurs</div>
+          <div class="colored">principaux</div>
+        </h2>
+        <span></span>
+        <p>Découvre le personnage joué par chaque acteur.</p>
+      </header>
+
+      <div class="actors-grid">
+        <div class="actor-card">
+          <div class="images-container">
+            <img src="./public/actor-img.png" alt="Image d'acteur">
+            <img src="./public/actor-img.png" alt="Image d'acteur">
+          </div>
+
+          <div class="hover-overlay">
+            <span>?</span>
+<!--            <button class="button">Découvrir le personnage</button>-->
+          </div>
+
+          <div class="actor-infos-overlay">
+            <h3>Lacie Pound</h3>
+            <p>Une femme vivant dans une société futuriste où les interactions sociales sont notées par les individus.</p>
+          </div>
+
+          <p>Bryce Dallas Howard</p>
+        </div>
+      </div>
+    </section>
+
     <script type="module" src="/main.js"></script>
   </body>
 </html>

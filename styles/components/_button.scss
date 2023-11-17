@@ -1,0 +1,17 @@
+
+
+.button {
+  border: 0;
+  outline: none;
+  padding: 1rem 3rem;
+
+  background: paint(squircle);
+  --squircle-smooth: 1;
+  --squircle-radius: 10px;
+  --squircle-fill: rgb(var(--color-primary));
+
+  cursor: pointer;
+
+  font-size: inherit;
+  font-family: inherit;
+}

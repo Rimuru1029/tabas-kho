@@ -1,0 +1,33 @@
+// Load fonts and variables
+@import "abstracts/variables";
+@import "./fonts/switzer.css";
+@import "./fonts/archivo.css";
+
+
+// Main styles
+body {
+  width: 100vw;
+  background: rgb(var(--color-background));
+  overflow-x: hidden;
+
+  color: rgb(var(--color-text));
+  font-family: Archivo, Poppins, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+
+
+// Imports
+@import "base/reset.css";
+@import "components/button";
+@import "components/actor-card";
+@import "layout/navbar";
+@import "layout/header";
+@import "layout/sections";
+@import "layout/load-overlay";

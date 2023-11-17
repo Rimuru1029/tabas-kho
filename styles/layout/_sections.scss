@@ -1,0 +1,53 @@
+
+
+section {
+  width: 100vw;
+  padding: 4rem var(--padding-desktop-horizontal);
+
+  header {
+    padding-bottom: 4rem;
+    display: block;
+    text-align: center;
+
+    h2 {
+      padding: 2rem 0;
+      margin-bottom: 2rem;
+      position: relative;
+
+      font-family: var(--font-heading);
+      font-size: 4rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 100%;
+      letter-spacing: -1px;
+
+      &::after {
+        content: "";
+        width: 80%;
+        //height: 100%;
+        position: absolute;
+
+        background: rgb(var(--color-secondary));
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      .colored {
+        color: rgb(var(--color-accent));
+      }
+    }
+
+    p {
+      font-size: 21px;
+    }
+  }
+}
+
+
+// Actors
+.actors-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
