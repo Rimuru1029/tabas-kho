@@ -3,6 +3,7 @@ import {splitLetter} from "./utils.js";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
+import anime from "animejs";
 
 import seriesData from "./data/series.json";
 
@@ -60,7 +61,7 @@ class App {
       })
 
       tl.to(".series-container", {
-          y: "-80%",
+          y: "-75%",
           duration: 6,
         })
         .from(".series-container p", {
@@ -168,14 +169,19 @@ class App {
       splitLetter({ el: title, lines: true })
     })
 
-    tl.from("section header span", {
+    tl.set("section header span", {
+      y: 10,
+      opacity: 0,
+    })
+
+    tl.to("section header span", {
       scrollTrigger: {
         trigger: "section",
         start: "top center",
         // toggleActions: "restart pause reverse pause"
       },
-      opacity: 0,
-      y: 10,
+      opacity: 1,
+      y: 0,
       stagger: {
         amount: .8,
       },
