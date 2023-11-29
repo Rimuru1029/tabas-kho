@@ -1,9 +1,4 @@
-<<<<<<< Updated upstream
 import {splitLetter} from "./utils.js";
-=======
-import '../styles/style.scss';
-import {splitLetter} from "../utils.js";
->>>>>>> Stashed changes
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
