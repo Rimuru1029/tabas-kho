@@ -14,7 +14,7 @@ class App {
   constructor() {
     this.initializeState()
     this.initLenis();
-    this.loadLoaderOverlay();
+    // this.loadLoaderOverlay();
     this.manageNavbar()
     this.loadHeader()
     this.manageActorCards()
