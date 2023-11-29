@@ -52,6 +52,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    z-index: 3;
 
     opacity: 0;
     transform: translateY(10px);
@@ -64,6 +65,8 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    cursor: pointer;
+    z-index: 2;
 
     span {
       font-size: 8rem;

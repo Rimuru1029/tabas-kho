@@ -90,3 +90,14 @@ body > header {
     background: linear-gradient(0deg, rgb(var(--color-background)) 0%, rgba(255, 255, 255, 0.00) 100%);
   }
 }
+
+*[data-slide-up] {
+  overflow: hidden;
+  transition: transform .3s ease, translate .3s ease, opacity .1s ease;
+}
+
+*[data-letter] {
+  position: relative;
+  display: inline-block;
+  transition: transform .3s ease, translate .3s ease, opacity .3s ease;
+}
