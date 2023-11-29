@@ -22,6 +22,7 @@ a {
 
 // Imports
 @import "base/reset.css";
+@import "base/typescale";
 @import "components/button";
 @import "components/actor-card";
 @import "layout/navbar";
@@ -32,4 +33,4 @@ a {
 
 // Pages imports
 @import "pages/general-presentation-page";
-@import "pages/presentation_toutes_les_saisons.css";
+@import "pages/presentation_toutes_les_saisons";
