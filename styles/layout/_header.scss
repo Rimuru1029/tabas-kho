@@ -43,7 +43,6 @@ body > header {
       height: 6px;
       margin: 0 .5rem;
 
-
       background: #fff;
       display: block;
       border-radius: 100px;
@@ -92,12 +91,18 @@ body > header {
 }
 
 *[data-slide-up] {
-  overflow: hidden;
-  transition: transform .3s ease, translate .3s ease, opacity .1s ease;
+  transition: transform .2s ease, translate .3s ease, opacity .1s ease;
+
+  & .space {
+    width: .3rem;
+    height: 100%;
+    display: inline-block;
+    background: red;
+  }
 }
 
 *[data-letter] {
   position: relative;
   display: inline-block;
-  transition: transform .3s ease, translate .3s ease, opacity .3s ease;
+  transition: transform .2s ease, translate .3s ease, opacity .1s ease;
 }
