@@ -1,4 +1,3 @@
-import './styles/style.scss';
 import {splitLetter} from "./utils.js";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
