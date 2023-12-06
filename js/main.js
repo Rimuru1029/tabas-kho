@@ -1,11 +1,9 @@
-import './styles/style.scss';
 import {splitLetter} from "./utils.js";
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import Lenis from "@studio-freight/lenis";
 import anime from "animejs";
-
-import seriesData from "./data/series.json";
+import seriesData from "../data/series.json";
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -14,15 +12,34 @@ class App {
   constructor() {
     this.initializeState()
     this.initLenis();
-    this.loadLoaderOverlay();
+    // this.loadLoaderOverlay();
     this.manageNavbar()
     this.loadHeader()
     this.manageActorCards()
-    this.loadSectionHeader()
+    this.loadSlideUpItems()
   }
 
   initializeState() {
+    const slideUpItems = document.querySelectorAll("[data-slide-up]")
 
+    slideUpItems.forEach(item => {
+      if (item.querySelectorAll('div, span').length > 0) {
+        splitLetter({el: item, lines: true})
+      } else {
+        splitLetter({el: item})
+      }
+      const letters = item.querySelectorAll("[data-letter]")
+
+      letters.forEach(letter => {
+        gsap.set(letters, {
+          y: 10,
+          opacity: 0,
+        })
+      })
+    })
+    gsap.set(slideUpItems, {
+      opacity: 0,
+    })
   }
 
   initLenis() {
@@ -148,47 +165,69 @@ class App {
 
   manageActorCards() {
     const cards = document.querySelectorAll(".actor-card")
+
     cards.forEach(card => {
       const infoOverlay = card.querySelector(".actor-infos-overlay")
       const hoverOverlay = card.querySelector(".hover-overlay")
 
+      // click
       card.addEventListener("click", e => {
         e.preventDefault()
         infoOverlay.classList.add("show")
         hoverOverlay.classList.add("not-show")
       })
+
+      // scroll animation
+      gsap.from(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: "top bottom-=80px",
+          toggleActions: "restart pause reverse pause",
+          markers: true,
+        },
+        opacity: 0,
+        y: 20,
+        scale: .8,
+        duration: .5,
+        ease: "power4.inOut",
+      })
     })
+
   }
 
-  loadSectionHeader() {
-    const headerTitles = document.querySelectorAll("section header h2")
-    const tl = gsap.timeline()
+  loadSlideUpItems() {
+    const slideUpItems = document.querySelectorAll("[data-slide-up]")
 
-    headerTitles.forEach(title => {
-      console.log(title)
-      splitLetter({ el: title, lines: true })
-    })
+    slideUpItems.forEach(item => {
+      const letters = item.querySelectorAll("[data-letter]")
 
-    tl.set("section header span", {
-      y: 10,
-      opacity: 0,
-    })
+      gsap.to(letters, {
+        scrollTrigger: {
+          trigger: item,
+          start: "top bottom-=80px",
+          toggleActions: "restart pause restart reset",
+          markers: true
+        },
+        duration: 0.1,
+        opacity: 1,
+        y: 0,
+        ease: "inOut",
+        stagger: .75 / (letters.length + 1),
+      }, "+=0")
 
-    tl.to("section header span", {
-      scrollTrigger: {
-        trigger: "section",
-        start: "top center",
-        // toggleActions: "restart pause reverse pause"
-      },
-      opacity: 1,
-      y: 0,
-      stagger: {
-        amount: .8,
-      },
-      ease: "power4.inOut"
+      gsap.to(item, {
+        scrollTrigger: {
+          trigger: item,
+          start: "top bottom-=80px",
+          toggleActions: "restart pause restart reset",
+          markers: true
+        },
+        opacity: 1,
+        duration: .5,
+        ease: "power4.inOut",
+      })
     })
   }
-
 }
 
 

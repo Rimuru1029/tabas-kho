@@ -10,7 +10,7 @@ export function splitLetter({ el=null, selector=null, lines=false }) {
   console.log(element, el)
 
   if (lines) {
-    const lines = element.querySelectorAll('div')
+    const lines = element.querySelectorAll('div, span')
     console.log(lines)
 
     lines.forEach(line => {
@@ -20,6 +20,10 @@ export function splitLetter({ el=null, selector=null, lines=false }) {
       for (const l of tempText) {
         let letterSpan = document.createElement('span')
         letterSpan.innerText = l;
+        letterSpan.setAttribute('data-letter', '');
+        if (l === " ") {
+          letterSpan.classList.add("space")
+        }
         line.appendChild(letterSpan)
       }
     })
@@ -30,6 +34,10 @@ export function splitLetter({ el=null, selector=null, lines=false }) {
     for (const l of tempText) {
       let letterSpan = document.createElement('span')
       letterSpan.innerText = l;
+      letterSpan.setAttribute('data-letter', '');
+      if (l === " ") {
+        letterSpan.classList.add("space")
+      }
       element.appendChild(letterSpan)
     }
   }

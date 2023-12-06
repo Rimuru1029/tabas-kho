@@ -1,8 +1,7 @@
 // Load fonts and variables
 @import "abstracts/variables";
-@import "./fonts/switzer.css";
-@import "./fonts/archivo.css";
-
+@import "fonts/switzer";
+@import "fonts/archivo";
 
 // Main styles
 body {
@@ -21,16 +20,17 @@ a {
   color: inherit;
 }
 
-
-
 // Imports
-@import "base/reset.css";
+@import "base/reset";
+@import "base/typescale";
 @import "components/button";
 @import "components/actor-card";
 @import "layout/navbar";
 @import "layout/header";
 @import "layout/sections";
 @import "layout/load-overlay";
+@import "layout/footer";
 
 // Pages imports
 @import "pages/general-presentation-page";
+@import "pages/presentation_toutes_les_saisons";
